@@ -1,8 +1,8 @@
 // https://github.com/nuxt-themes/alpine/blob/main/nuxt.schema.ts
 export default defineAppConfig({
   alpine: {
-    title: 'Alpine',
-    description: 'The minimalist blog theme',
+    title: 'Justin Ang',
+    description: 'Portfolio Website of Justin Ang powered by Nuxt Content',
     image: {
       src: '/social-card-preview.png',
       alt: 'An image showcasing my project.',
@@ -32,13 +32,16 @@ export default defineAppConfig({
       message: 'Follow me on' // string that will be displayed in the footer (leave empty or delete to disable)
     },
     socials: {
-      twitter: 'nuxtlabs',
-      instagram: 'atinuxt',
+      twitter: '',
+      instagram: '',
+
       linkedin: {
         icon: 'uil:linkedin',
         label: 'LinkedIn',
         href: 'https://www.linkedin.com/company/nuxtlabs'
-      }
+      },
+
+      github: 'https://github.com/jrang188'
     },
     form: {
       successMessage: 'Message sent. Thank you!'
