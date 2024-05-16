@@ -14,7 +14,7 @@ export default defineAppConfig({
       logo: {
         path: '/light_logo.png', // path of the logo
         pathDark: '/dark_logo.png', // path of the logo in dark mode, leave this empty if you want to use the same logo
-        alt: 'Justin A' // alt of the logo
+        alt: 'Justin' // alt of the logo
       }
     },
     footer: {
