@@ -10,7 +10,7 @@ export default defineAppConfig({
       height: 300
     },
     header: {
-      position: 'right', // possible value are : | 'left' | 'center' | 'right'
+      position: 'left', // possible value are : | 'left' | 'center' | 'right'
       logo: {
         path: '/light_logo.png', // path of the logo
         pathDark: '/dark_logo.png', // path of the logo in dark mode, leave this empty if you want to use the same logo
