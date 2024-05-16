@@ -41,7 +41,7 @@ export default defineAppConfig({
         href: "https://www.linkedin.com/in/jrang188/",
       },
 
-      github: "https://github.com/jrang188",
+      github: "jrang188",
     },
     form: {
       successMessage: "Message sent. Thank you!",
