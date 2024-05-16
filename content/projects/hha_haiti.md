@@ -1,14 +1,24 @@
 ---
-title: "HHA Haiti Hospital Management Platform"
-date: 2024-05-15T23:03:19+07:00
-description: "Developed a hospital management platform for Hope Health Action (HHA) using React, Express, TypeScript, MongoDB, and Node.js."
+title: HHA Haiti Hospital Management Platform
+date: 2024-05-15T16:03:19.000Z
+description: Developed a hospital management platform for Hope Health Action (HHA) using React, Express, TypeScript, MongoDB, and Node.js.
 layout: article
+cover: projects/hha1_16x9.png
 ---
 
-<!-- {{< github repo="drbfraser/HHA-HaitiHospital" >}}
-{{< carousel images="{img/*}" aspectRatio="16-9">}} -->
+[Github Repo link](https://github.com/drbfraser/HHA-HaitiHospital)
 
-Developed a hospital management platform for [Hope Health Action (HHA)](https://hopehealthaction.org/) to be used in Haiti to manage their hospital and healthcare initiatives. The platform's main features are departmental report generation, broken equipment tracking, employee of the month management, message board, and case study management. This platform aims to reduce the amount of paperwork and manual data entry required by the hospital staff.
+::gallery
+---
+images:
+  - /projects/hha1_16x9.png
+  - /projects/hha2_16x9.png
+  - /projects/hha3_16x9.png
+  - /projects/hha4_16x9.png
+---
+::
+
+Developed a hospital management platform for [Hope Health Action (HHA)](https://hopehealthaction.org/) to be used in Haiti to manage their hospital and healthcare initiatives. The platform's main features are departmental report generation, broken equipment tracking, employee of the month management, message board, and case study management. This platform aims to reduce the paperwork and manual data entry required by the hospital staff.
 
 ## Role
 
