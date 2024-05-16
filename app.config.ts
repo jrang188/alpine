@@ -50,7 +50,7 @@ export default defineAppConfig({
 
   prose: {
     h1: {
-      icon: 'key-116'
+      icon: ''
     }
   },
 
