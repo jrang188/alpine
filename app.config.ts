@@ -4,8 +4,8 @@ export default defineAppConfig({
     title: 'Justin Ang',
     description: 'Portfolio Website of Justin Ang powered by Nuxt Content',
     image: {
-      src: '/social-card-preview.png',
-      alt: 'An image showcasing my project.',
+      src: '/personalpic.jpeg',
+      alt: 'Justin Ang',
       width: 400,
       height: 300
     },
