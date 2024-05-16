@@ -10,14 +10,9 @@ cover: /projects/tenacity.png
 
 [Tenacity](https://nw-hacks-2023.vercel.app/) is a Discord bot aimed at helping users with their feelings of insecurities and inferiorities by reminding them of their own accomplishments. This discord bot was part of the Stormhacks 2022 Hackathon.
 
-{{< button href="https://discord.com/api/oauth2/authorize?client_id=944471932475150356&permissions=8&scope=bot%20applications.commands" target="externalLinkTarget">}}
-Try the Discord Bot!
-{{< /button >}}
-</br>
-</br>
-{{< button href="https://devpost.com/software/tenacity" target="externalLinkTarget">}}
-Devpost
-{{< /button >}}
+[Try the Discord Bot!](https://discord.com/api/oauth2/authorize?client_id=944471932475150356&permissions=8&scope=bot%20applications.commands)
+
+[Devpost Link](https://devpost.com/software/tenacity)
 
 ## Tech Stack
 

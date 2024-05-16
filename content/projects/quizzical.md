@@ -18,9 +18,7 @@ images:
 
 [Quizzical](https://quizzical-iota.vercel.app/) is a quiz app that offers users the ability to customize their quizzes by selecting the difficulty level, category, and type of questions. The app sources the quiz from the [Open Trivia Database](https://opentdb.com/) enabling users to enjoy a wide variety of questions.
 
-<!-- {{< button href="https://quizzical-iota.vercel.app/" target="externalLinkTarget">}}
-Try it out here!
-{{< /button >}} -->
+[Try it out here!](https://quizzical-iota.vercel.app/)
 
 ## Tech Stack
 
