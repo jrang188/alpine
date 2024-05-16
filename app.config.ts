@@ -12,8 +12,8 @@ export default defineAppConfig({
     header: {
       position: 'right', // possible value are : | 'left' | 'center' | 'right'
       logo: {
-        path: '/light-logo.png', // path of the logo
-        pathDark: '/dark-logo.png', // path of the logo in dark mode, leave this empty if you want to use the same logo
+        path: '/light_logo.png', // path of the logo
+        pathDark: '/dark_logo.png', // path of the logo in dark mode, leave this empty if you want to use the same logo
         alt: 'Justin A' // alt of the logo
       }
     },
