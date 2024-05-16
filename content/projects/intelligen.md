@@ -3,10 +3,21 @@ title: "IntelliGEN"
 date: 2023-05-21T14:20:27-07:00
 description: "Full-stack app that allows you to generate quizzes from your notes using ChatGPT-3.5"
 layout: article
+cover: /projects/intelligen-1_16x9.png
 ---
 
-<!-- {{< github repo="Aryan-B/Stormhacks" >}}
-{{< carousel images="{img/*}" aspectRatio="16-9">}} -->
+[Github Repo link](https://github.com/Aryan-B/Stormhacks)
+
+::gallery
+---
+images:
+  - /projects/intelligen-1_16x9.png
+  - /projects/intelligen-2_16x9.png
+  - /projects/intelligen-3_16x9.png
+  - /projects/intelligen-4_16x9.png
+  - /projects/intelligen-5_16x9.png
+---
+::
 
 ## Inspiration
 
@@ -39,9 +50,7 @@ During the development of intelliGEN, we gained valuable insights into leveragin
 
 In the future, we plan to polish the frontend and backend integration. We also hope to implement ways to further personalize the user's experience.
 
-<!-- {{< button href="<https://devpost.com/software/intelligen>" target="externalLinkTarget">}}
-See our Devpost here!
-{{< /button >}} -->
+[See our Devpost here!](https://devpost.com/software/intelligen)
 
 This project is a submission for [StormHacks 2023](https://stormhacks.com/) at Simon Fraser University.
 

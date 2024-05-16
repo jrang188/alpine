@@ -3,10 +3,10 @@ title: "Exercise Tracker API"
 date: 2023-04-11T16:47:02-07:00
 description: "A simple exercise tracker api using Express, TypeScript, Prisma, and an SQL database."
 layout: article
+cover: /projects/exercise_tracker_api.png
 ---
 
-<!-- {{< github repo="jrang188/exercise-tracker" >}}
-![A simple UI](feature.png "A simple UI") -->
+[Github Repo link](https://github.com/jrang188/exercise-tracker)
 
 This [project](https://exercise-tracker-qqnz.onrender.com/) is based on the [FreeCodeCamp Backend Development & API Certification project](https://www.freecodecamp.org/learn/back-end-development-and-apis/back-end-development-and-apis-projects/exercise-tracker). However, I decided to do it differently from the requirements to learn and try new technologies.
 
