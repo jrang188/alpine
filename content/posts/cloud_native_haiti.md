@@ -14,7 +14,7 @@ Baptiste d’Haiti (HCBH) in Haiti simplify their paperwork and facilitate
 decision-making with data-driven insights. The platform utilizes the
 MERN stack (MongoDB, Express, React, Node.js) with a monolithic
 architecture. It is hosted inside a Virtual Private Server (VPS) or
-Virtual Machine (VM) within SFU’s server.:br
+Virtual Machine (VM) within SFU’s server.\:br
 The challenges developers encounter while developing and maintaining the
 HHA platform include restricted access to infrastructure resources, a
 vulnerability-prone architectural design, and insufficient backup
@@ -23,13 +23,13 @@ increase the risk of downtime and data loss, and make it challenging to
 ensure a reliable hospital platform for HHA. Enabling developers more
 access to the infrastructure, strengthening architectural resilience,
 and implementing failovers are critical steps to address these
-vulnerabilities and improve overall platform stability.:br
+vulnerabilities and improve overall platform stability.\:br
 This brings us to the concept of **Cloud Native Applications**, often
 misunderstood as merely referring to applications built on the cloud
 when it encompasses much more(Gannon, Barga, and Sundaresan 2017). In a
 nutshell, cloud-native applications are built and designed for the cloud
 and take advantage of the cloud computing model to be more resilient,
-manageable, and observable(Foundation n.d.).:br
+manageable, and observable(Foundation n.d.).\:br
 This paper explores how HHA can benefit from a cloud-native application
 architecture on their Haiti hospital platform. It will show how, by
 being more cloud-native, the hospital platform can be more resilient,
@@ -133,7 +133,7 @@ divided into three layers, each running on a Docker container. We use
 docker-compose to orchestrate the different layers, seamlessly managing
 the services, networks, and volumes needed to run this application. The
 Docker containers run on top of a virtual machine (VM) within SFU’s
-server or a virtual private server (VPS) managed by HHA.:br
+server or a virtual private server (VPS) managed by HHA.\:br
 The project’s three layers exist within a single codebase. In addition,
 the project also has a common directory containing all the code that can
 be shared with the frontend and backend, such as report templates,
@@ -142,7 +142,7 @@ features such as Reports, Employee of the Month (EoTM), Departments,
 Users, Equipment, Messages, etc. Therefore, it is evident that this
 project uses the monolithic architecture, where an application is
 developed as a single unit, is self-contained, and each component is
-tightly coupled with each other.:br
+tightly coupled with each other.\:br
 The decision to create a monolithic MERN stack application makes it easy
 for developers to prototype it quickly when it was first developed. For
 a small team that regularly changes and since the project has a small
@@ -247,19 +247,19 @@ Developers can efficiently allocate specific resources for deployment
 using declarative configurations, eliminating system administrators’
 need for direct intervention. This autonomy allows quicker deployment
 cycles, as developers can define the desired deployment state through a
-YAML file (Luksa 2017).:br
+YAML file (Luksa 2017).\:br
 Given these advantages, I recommend setting up a Kubernetes cluster
 through a cloud provider like AWS EKS, Azure AKS, or Google GKE. The
 complexity of configuring our hardware for Kubernetes suggests that a
 cloud-based solution would be more feasible and practical, especially
-for HHA, who might have limited IT resources.:br
+for HHA, who might have limited IT resources.\:br
 Additionally, I propose that the SFU School of Computing Science
 establish a Kubernetes cluster for educational purposes. This would
 provide a valuable, hands-on learning environment for students,
 particularly in courses like CMPT 415, enabling them to deploy and
 manage their applications effectively while maintaining security and
 minimizing risks. This initiative would enhance their technical skills
-and prepare them for real-world software development challenges.:br_**GitOps**_ The declarative nature of Kubernetes also introduces us to
+and prepare them for real-world software development challenges.\:br\_**GitOps**\_ The declarative nature of Kubernetes also introduces us to
 the concept of GitOps, where the state of the infrastructure and
 deployment is kept in a Git repository as a single source of truth,
 therefore enabling a more consistent infrastructure, enhanced visibility
@@ -276,7 +276,7 @@ This is critical when dealing with sensitive data such as patient
 records, where a highly resilient system with robust failover
 capabilities is essential. Given that HHA may have limited IT staff and
 resources, reducing the need for human intervention is crucial,
-especially concerning database management.:br
+especially concerning database management.\:br
 To address this, I strongly recommend fully managed services for our
 database needs. For instance, MongoDB Atlas would be more effective than
 self-hosting a MongoDB container. MongoDB Atlas offers comprehensive
