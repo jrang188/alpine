@@ -3,7 +3,7 @@ title: Making Haiti HHA More Cloud Native
 layout: article
 date: 2024-04-28T00:00:00.000Z
 description: An article on how to make the hospital platform for Hope Health Action (HHA) in Haiti more cloud-native.
-cover: "/posts/hha_haiti_arch.png"
+cover: /posts/hha_haiti_arch.png
 ---
 
 ## Introduction
@@ -14,7 +14,7 @@ Baptiste d’Haiti (HCBH) in Haiti simplify their paperwork and facilitate
 decision-making with data-driven insights. The platform utilizes the
 MERN stack (MongoDB, Express, React, Node.js) with a monolithic
 architecture. It is hosted inside a Virtual Private Server (VPS) or
-Virtual Machine (VM) within SFU’s server.  
+Virtual Machine (VM) within SFU’s server.:br
 The challenges developers encounter while developing and maintaining the
 HHA platform include restricted access to infrastructure resources, a
 vulnerability-prone architectural design, and insufficient backup
@@ -23,13 +23,13 @@ increase the risk of downtime and data loss, and make it challenging to
 ensure a reliable hospital platform for HHA. Enabling developers more
 access to the infrastructure, strengthening architectural resilience,
 and implementing failovers are critical steps to address these
-vulnerabilities and improve overall platform stability.  
+vulnerabilities and improve overall platform stability.:br
 This brings us to the concept of **Cloud Native Applications**, often
 misunderstood as merely referring to applications built on the cloud
 when it encompasses much more(Gannon, Barga, and Sundaresan 2017). In a
 nutshell, cloud-native applications are built and designed for the cloud
 and take advantage of the cloud computing model to be more resilient,
-manageable, and observable(Foundation n.d.).  
+manageable, and observable(Foundation n.d.).:br
 This paper explores how HHA can benefit from a cloud-native application
 architecture on their Haiti hospital platform. It will show how, by
 being more cloud-native, the hospital platform can be more resilient,
@@ -68,18 +68,15 @@ approach to application development and deployment.
   communication protocol. They usually have a separate database and are
   developed independently from each other(“What Is Cloud Native? - Cloud
   Native Applications Explained - AWS” n.d.; robvet 2023).
-
 - **Containers**: A container packs the source code and all the
   necessary dependencies into a single format. By containerizing, it
   enables more portability and standardization across environments.
   There are no more excuses of “it doesn’t work on my computer.”(“What
   Is Cloud Native? - Cloud Native Applications Explained - AWS” n.d.;
   robvet 2023)
-
 - **Service Meshes**: The software layer that manages communication
   between microservices within a cloud environment(“What Is Cloud
   Native? - Cloud Native Applications Explained - AWS” n.d.).
-
 - **Immutable Infrastructure**: A server hosting an application does not
   get repaired, updated, or modified. Instead, if an application
   requires more processing power, a new server with a more powerful CPU
@@ -87,13 +84,11 @@ approach to application development and deployment.
   server gets destroyed. All this is usually done through
   automation(“What Is Cloud Native? - Cloud Native Applications
   Explained - AWS” n.d.; robvet 2023).
-
 - **Declarative APIs**: The APIs enable engineers to define the desired
   state of the infrastructure rather than having to list the steps
   required to achieve the desired state (the imperative way)(“What Is
   Cloud Native? - Cloud Native Applications Explained - AWS” n.d.). This
   minimizes complexity and reduces errors.
-
 - **Automation**: One of the core DevOps principles is automation.
   Through automation, we minimized manual tasks that slow teams down or
   allow human errors. This is significantly essential when a project
@@ -104,26 +99,21 @@ Therefore, cloud-native applications are:
 - **Loosely Coupled**: Small, individual components of an application
   are developed independently. Therefore, a change or outage in one
   component will not affect others(“Cloud Native Glossary” n.d.).
-
 - **Scalable**: The application should also scale well with large
   numbers of concurrent users. It should be able to scale horizontally
   (adding nodes) or vertically (increasing resources) quickly(“Cloud
   Native Glossary” n.d.).
-
 - **Resilient**: The application assumes that the cloud resources or
   third-party services it depends on will fail; thus, it is prepared to
   deal with them to remain available during outages(Toffetti et al.
-  2017).
-
+  2017\).
 - **Manageable**: The application and the infrastructure should be easy
   to manage and maintain.
-
 - **Observable**: A system should be able to generate actionable
   insights. It enables users to understand a system’s state from the
   system’s output and take action if necessary. It refers to a system’s
   logs, metrics, traces, or dependencies(“What Is Observability? IBM”
-  2024).
-
+  2024\).
 - **Agile**: This defines how fast a business can bring an idea to the
   market. An agile business will be able to respond to market conditions
   rapidly(robvet 2023).
@@ -143,7 +133,7 @@ divided into three layers, each running on a Docker container. We use
 docker-compose to orchestrate the different layers, seamlessly managing
 the services, networks, and volumes needed to run this application. The
 Docker containers run on top of a virtual machine (VM) within SFU’s
-server or a virtual private server (VPS) managed by HHA.  
+server or a virtual private server (VPS) managed by HHA.:br
 The project’s three layers exist within a single codebase. In addition,
 the project also has a common directory containing all the code that can
 be shared with the frontend and backend, such as report templates,
@@ -152,7 +142,7 @@ features such as Reports, Employee of the Month (EoTM), Departments,
 Users, Equipment, Messages, etc. Therefore, it is evident that this
 project uses the monolithic architecture, where an application is
 developed as a single unit, is self-contained, and each component is
-tightly coupled with each other.  
+tightly coupled with each other.:br
 The decision to create a monolithic MERN stack application makes it easy
 for developers to prototype it quickly when it was first developed. For
 a small team that regularly changes and since the project has a small
@@ -225,7 +215,7 @@ significant delays.
 
 ### Microservice Design
 
-:nuxt-img{src="/posts/haiti_microservice.png" alt="HHA Haiti Hospital Platform Microservice Architecture Prototype"}
+:nuxt-img{alt="HHA Haiti Hospital Platform Microservice Architecture Prototype" src="/posts/haiti_microservice.png"}
 
 As we look to enhance the platform’s resiliency, manageability, and
 overall agility, I propose we begin transitioning towards a
@@ -257,20 +247,19 @@ Developers can efficiently allocate specific resources for deployment
 using declarative configurations, eliminating system administrators’
 need for direct intervention. This autonomy allows quicker deployment
 cycles, as developers can define the desired deployment state through a
-YAML file (Luksa 2017).  
+YAML file (Luksa 2017).:br
 Given these advantages, I recommend setting up a Kubernetes cluster
 through a cloud provider like AWS EKS, Azure AKS, or Google GKE. The
 complexity of configuring our hardware for Kubernetes suggests that a
 cloud-based solution would be more feasible and practical, especially
-for HHA, who might have limited IT resources.  
+for HHA, who might have limited IT resources.:br
 Additionally, I propose that the SFU School of Computing Science
 establish a Kubernetes cluster for educational purposes. This would
 provide a valuable, hands-on learning environment for students,
 particularly in courses like CMPT 415, enabling them to deploy and
 manage their applications effectively while maintaining security and
 minimizing risks. This initiative would enhance their technical skills
-and prepare them for real-world software development challenges.  
-**_GitOps_** The declarative nature of Kubernetes also introduces us to
+and prepare them for real-world software development challenges.:br_**GitOps**_ The declarative nature of Kubernetes also introduces us to
 the concept of GitOps, where the state of the infrastructure and
 deployment is kept in a Git repository as a single source of truth,
 therefore enabling a more consistent infrastructure, enhanced visibility
@@ -287,7 +276,7 @@ This is critical when dealing with sensitive data such as patient
 records, where a highly resilient system with robust failover
 capabilities is essential. Given that HHA may have limited IT staff and
 resources, reducing the need for human intervention is crucial,
-especially concerning database management.  
+especially concerning database management.:br
 To address this, I strongly recommend fully managed services for our
 database needs. For instance, MongoDB Atlas would be more effective than
 self-hosting a MongoDB container. MongoDB Atlas offers comprehensive
@@ -299,7 +288,7 @@ core functions by outsourcing the complex, resource-intensive tasks of
 database management. However, although MongoDB Atlas is a viable option,
 we should also look for other MongoDB database services. Some
 alternatives include Digital Ocean (“Managed MongoDB Hosting Starting at
-\$15/Mo DigitalOcean” n.d.), Azure Cosmos DB, and AWS Document DB (The
+$15/Mo DigitalOcean” n.d.), Azure Cosmos DB, and AWS Document DB (The
 last two require MongoDB compatibility layer turned on) (“Other Document
 Database Compatibility — MongoDB Drivers” n.d.).
 
@@ -319,120 +308,86 @@ and backup concerns.
 
 ## References
 
-<div id="refs" class="references csl-bib-body hanging-indent"
-entry-spacing="0">
+::div{#refs .references.csl-bib-body.hanging-indent entry-spacing="0"}
+  :::div{#ref-noauthor_cloud_nodate .csl-entry}
+  “Cloud Native Glossary.” n.d. Accessed April 24, 2024.
+  <https://glossary.cncf.io/>.
+  :::
 
-<div id="ref-noauthor_cloud_nodate" class="csl-entry">
+  :::div{#ref-cloud_native_computing_foundation_cloud_nodate .csl-entry}
+  Foundation, Cloud Native Computing. n.d. “Cloud Native Definition V.1.”
+  Git {Repository}. _GitHub_. Accessed April 24, 2024.
+  <https://github.com/cncf/toc/blob/0cdf2c43a5a5db3ad87a71bd0fd937388ad6e4c5/DEFINITION.md>.
+  :::
 
-“Cloud Native Glossary.” n.d. Accessed April 24, 2024.
-<https://glossary.cncf.io/>.
+  :::div{#ref-gannon_cloud-native_2017 .csl-entry}
+  Gannon, Dennis, Roger Barga, and Neel Sundaresan. 2017. “Cloud-Native
+  Applications.” _IEEE Cloud Computing_ 4 (5): 16–21.
+  <https://doi.org/10.1109/MCC.2017.4250939>.
+  :::
 
-</div>
+  :::div{#ref-luksa_kubernetes_2017 .csl-entry}
+  Luksa, Marko. 2017. _Kubernetes in Action_. Simon; Schuster.
+  :::
 
-<div id="ref-cloud_native_computing_foundation_cloud_nodate"
-class="csl-entry">
+  :::div{#ref-noauthor_managed_nodate .csl-entry}
+  “Managed MongoDB Hosting Starting at $15/Mo DigitalOcean.” n.d.
+  Accessed April 24, 2024.
+  <https://www.digitalocean.com/products/managed-databases-mongodb>.
+  :::
 
-Foundation, Cloud Native Computing. n.d. “Cloud Native Definition V.1.”
-Git {Repository}. _GitHub_. Accessed April 24, 2024.
-<https://github.com/cncf/toc/blob/0cdf2c43a5a5db3ad87a71bd0fd937388ad6e4c5/DEFINITION.md>.
+  :::div{#ref-noauthor_mern_nodate .csl-entry}
+  “MERN Stack Explained.” n.d. _MongoDB_. Accessed April 24, 2024.
+  <https://www.mongodb.com/resources/languages/mern-stack>.
+  :::
 
-</div>
+  :::div{#ref-noauthor_mongodb_nodate .csl-entry}
+  “MongoDB Atlas Database Multi-Cloud Database Service.” n.d. _MongoDB_.
+  Accessed April 24, 2024. <https://www.mongodb.com/atlas/database>.
+  :::
 
-<div id="ref-gannon_cloud-native_2017" class="csl-entry">
+  :::div{#ref-noauthor_other_nodate .csl-entry}
+  “Other Document Database Compatibility — MongoDB Drivers.” n.d. Accessed
+  April 24, 2024.
+  <https://www.mongodb.com/docs/drivers/other-document-dbs/>.
+  :::
 
-Gannon, Dennis, Roger Barga, and Neel Sundaresan. 2017. “Cloud-Native
-Applications.” _IEEE Cloud Computing_ 4 (5): 16–21.
-<https://doi.org/10.1109/MCC.2017.4250939>.
+  :::div{#ref-noauthor_pro_nodate .csl-entry}
+  _Pro MERN Stack_. n.d. Accessed April 24, 2024.
+  <https://link.springer.com/book/10.1007/978-1-4842-4391-6>.
+  :::
 
-</div>
+  :::div{#ref-robvet_what_2023 .csl-entry}
+  robvet. 2023. “What Is Cloud Native? - .NET.”
+  <https://learn.microsoft.com/en-us/dotnet/architecture/cloud-native/definition>.
+  :::
 
-<div id="ref-luksa_kubernetes_2017" class="csl-entry">
+  :::div{#ref-toffetti_self-managing_2017 .csl-entry}
+  Toffetti, Giovanni, Sandro Brunner, Martin Blöchlinger, Josef Spillner,
+  and Thomas Michael Bohnert. 2017. “Self-Managing Cloud-Native
+  Applications: Design, Implementation, and Experience.” _Future
+  Generation Computer Systems_ 72 (July): 165–79.
+  <https://doi.org/10.1016/j.future.2016.09.002>.
+  :::
 
-Luksa, Marko. 2017. _Kubernetes in Action_. Simon; Schuster.
+  :::div{#ref-vinto_gitops_2022 .csl-entry}
+  Vinto, Natale, and Alex Soto Bueno. 2022. _GitOps Cookbook_. "O’Reilly
+  Media, Inc.".
+  :::
 
-</div>
+  :::div{#ref-noauthor_what_nodate .csl-entry}
+  “What Is Cloud Native? - Cloud Native Applications Explained - AWS.”
+  n.d. _Amazon Web Services, Inc._ Accessed April 24, 2024.
+  <https://aws.amazon.com/what-is/cloud-native/>.
+  :::
 
-<div id="ref-noauthor_managed_nodate" class="csl-entry">
+  :::div{#ref-noauthor_what_nodate-1 .csl-entry}
+  “What Is DevOps? GitLab.” n.d. Accessed April 24, 2024.
+  <https://about.gitlab.com/topics/devops/>.
+  :::
 
-“Managed MongoDB Hosting Starting at \$15/Mo DigitalOcean.” n.d.
-Accessed April 24, 2024.
-<https://www.digitalocean.com/products/managed-databases-mongodb>.
-
-</div>
-
-<div id="ref-noauthor_mern_nodate" class="csl-entry">
-
-“MERN Stack Explained.” n.d. _MongoDB_. Accessed April 24, 2024.
-<https://www.mongodb.com/resources/languages/mern-stack>.
-
-</div>
-
-<div id="ref-noauthor_mongodb_nodate" class="csl-entry">
-
-“MongoDB Atlas Database Multi-Cloud Database Service.” n.d. _MongoDB_.
-Accessed April 24, 2024. <https://www.mongodb.com/atlas/database>.
-
-</div>
-
-<div id="ref-noauthor_other_nodate" class="csl-entry">
-
-“Other Document Database Compatibility — MongoDB Drivers.” n.d. Accessed
-April 24, 2024.
-<https://www.mongodb.com/docs/drivers/other-document-dbs/>.
-
-</div>
-
-<div id="ref-noauthor_pro_nodate" class="csl-entry">
-
-_Pro MERN Stack_. n.d. Accessed April 24, 2024.
-<https://link.springer.com/book/10.1007/978-1-4842-4391-6>.
-
-</div>
-
-<div id="ref-robvet_what_2023" class="csl-entry">
-
-robvet. 2023. “What Is Cloud Native? - .NET.”
-<https://learn.microsoft.com/en-us/dotnet/architecture/cloud-native/definition>.
-
-</div>
-
-<div id="ref-toffetti_self-managing_2017" class="csl-entry">
-
-Toffetti, Giovanni, Sandro Brunner, Martin Blöchlinger, Josef Spillner,
-and Thomas Michael Bohnert. 2017. “Self-Managing Cloud-Native
-Applications: Design, Implementation, and Experience.” _Future
-Generation Computer Systems_ 72 (July): 165–79.
-<https://doi.org/10.1016/j.future.2016.09.002>.
-
-</div>
-
-<div id="ref-vinto_gitops_2022" class="csl-entry">
-
-Vinto, Natale, and Alex Soto Bueno. 2022. _GitOps Cookbook_. "O’Reilly
-Media, Inc.".
-
-</div>
-
-<div id="ref-noauthor_what_nodate" class="csl-entry">
-
-“What Is Cloud Native? - Cloud Native Applications Explained - AWS.”
-n.d. _Amazon Web Services, Inc._ Accessed April 24, 2024.
-<https://aws.amazon.com/what-is/cloud-native/>.
-
-</div>
-
-<div id="ref-noauthor_what_nodate-1" class="csl-entry">
-
-“What Is DevOps? GitLab.” n.d. Accessed April 24, 2024.
-<https://about.gitlab.com/topics/devops/>.
-
-</div>
-
-<div id="ref-noauthor_what_2024" class="csl-entry">
-
-“What Is Observability? IBM.” 2024.
-<https://www.ibm.com/topics/observability>.
-
-</div>
-
-</div>
+  :::div{#ref-noauthor_what_2024 .csl-entry}
+  “What Is Observability? IBM.” 2024.
+  <https://www.ibm.com/topics/observability>.
+  :::
+::
