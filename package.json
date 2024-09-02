@@ -16,7 +16,7 @@
     "@nuxthq/studio": "^1.1.2",
     "@nuxtjs/plausible": "^0.2.4",
     "@types/node": "^20.16.3",
-    "eslint": "^8.57.0",
+    "eslint": "^9.9.1",
     "nuxt": "^3.13.0"
   }
 }
