@@ -23,15 +23,15 @@
     <div class="title">
       <ContentSlot :use="$slots.title" unwrap="p"> Job Title </ContentSlot>
     </div>
-    <div>
-      <ContentSlot :use="$slots.company" unwrap="p"> Company Name </ContentSlot>
+    <div class="organization">
+      <ContentSlot :use="$slots.organization" unwrap="p"> Organization Name </ContentSlot>
     </div>
-    <div>
-      <div>
+    <div class="tenure-location">
+      <div class="tenure">
         <ContentSlot :use="$slots.startDate" unwrap="p">Start Date</ContentSlot>
         - <ContentSlot :use="$slots.endDate" unwrap="p">End Date</ContentSlot>
       </div>
-      <div>
+      <div class="location">
         <ContentSlot :use="$slots.location" unwrap="p">
           Company Location
         </ContentSlot>
@@ -54,6 +54,19 @@ css({
       fontSize: '{text.2xl.fontSize}',
       lineHeight: '{text.2xl.lineHeight}',
       fontWeight: '{fontWeight.bold}',
+    },
+    '.organization': {
+      fontSize: '{text.lg.fontSize}',
+      lineHeight: '{text.lg.lineHeight}',
+      fontWeight: '{fontWeight.semibold}',
+    },
+    '.tenure-location': {
+      display: 'flex',
+      flexDirection: 'row', 
+      justifyContent: 'space-between',
+      '.location': {
+        fontStyle: 'italic',
+      },
     },
   }
 })
