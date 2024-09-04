@@ -40,13 +40,7 @@ const formatDate = (date: string): string => {
         </ContentSlot>
       </div>
     </div>
-    <ContentSlot :use="$slots.bulletPoints" unwrap="ul li">
-      <ul>
-        <li>Bullet Point 1</li>
-        <li>Bullet Point 2</li>
-        <li>Bullet Point 3</li>
-      </ul>
-    </ContentSlot>
+    <ContentSlot :use="$slots.bulletPoints" unwrap="ul li"/>
   </div>
 </template>
 
