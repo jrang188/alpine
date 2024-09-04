@@ -1,21 +1,22 @@
 <script lang="ts" setup>
-// import type { PropType } from 'vue'
+defineProps({
+  startDate: {
+    type: String,
+    default: "2020-01-01",
+  },
+  endDate: {
+    type: String,
+    default: () => new Date(),
+  },
+});
 
-// interface ResumeEntry {
-//   jobTitle: string
-//   companyName: string
-//   // startDate: Date
-//   // endDate: Date
-//   // location: string
-//   // bulletPoints: string[]
-// }
-
-// defineProps({
-//   resumeEntry: {
-//     type: Object as PropType<ResumeEntry>,
-//     required: true,
-//   },
-// });
+const formatDate = (date: string): string => {
+  const [year, month] = date.split("-").map(Number);
+  return new Date(year, month - 1).toLocaleDateString("en-US", {
+    year: "numeric",
+    month: "long",
+  });
+};
 </script>
 
 <template>
@@ -24,12 +25,14 @@
       <ContentSlot :use="$slots.title" unwrap="p"> Job Title </ContentSlot>
     </div>
     <div class="organization">
-      <ContentSlot :use="$slots.organization" unwrap="p"> Organization Name </ContentSlot>
+      <ContentSlot :use="$slots.organization" unwrap="p">
+        Organization Name
+      </ContentSlot>
     </div>
     <div class="tenure-location">
       <div class="tenure">
-        <ContentSlot :use="$slots.startDate" unwrap="p">Start Date</ContentSlot>
-        - <ContentSlot :use="$slots.endDate" unwrap="p">End Date</ContentSlot>
+        {{ formatDate(startDate) }} -
+        {{ formatDate(endDate) }}
       </div>
       <div class="location">
         <ContentSlot :use="$slots.location" unwrap="p">
@@ -62,7 +65,7 @@ css({
     },
     '.tenure-location': {
       display: 'flex',
-      flexDirection: 'row', 
+      flexDirection: 'row',
       justifyContent: 'space-between',
       '.location': {
         fontStyle: 'italic',
