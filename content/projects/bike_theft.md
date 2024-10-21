@@ -1,7 +1,7 @@
 ---
 title: Bike Theft Alarm
 date: 2023-04-13T00:00:00.000Z
-description: "Embedded bike theft alarm for the Beaglebone Green build on C and Vue.js "
+description: 'Embedded bike theft alarm for the Beaglebone Green build on C and Vue.js '
 layout: article
 cover: /projects/bbg_with_gps.jpeg
 ---
