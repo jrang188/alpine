@@ -11,12 +11,12 @@
   },
   "devDependencies": {
     "@nuxt-themes/alpine": "latest",
-    "@nuxt/devtools": "^1.6.1",
-    "@nuxt/eslint-config": "^0.5.7",
-    "@nuxthq/studio": "^2.2.1",
-    "@nuxtjs/plausible": "^1.2.0",
-    "@types/node": "^22.10.0",
-    "eslint": "^9.15.0",
-    "nuxt": "^3.14.1592"
+    "@nuxt/devtools": "^1.4.1",
+    "@nuxt/eslint-config": "^0.5.5",
+    "@nuxthq/studio": "^2.0.3",
+    "@nuxtjs/plausible": "^1.0.2",
+    "@types/node": "^22.5.2",
+    "eslint": "^9.9.1",
+    "nuxt": "^3.13.0"
   }
 }
