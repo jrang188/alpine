@@ -11,7 +11,7 @@
   },
   "devDependencies": {
     "@nuxt-themes/alpine": "latest",
-    "@nuxt/devtools": "^1.4.1",
+    "@nuxt/devtools": "^3.4.2",
     "@nuxt/eslint-config": "^0.5.5",
     "@nuxthq/studio": "^2.0.3",
     "@nuxtjs/plausible": "^1.0.2",
